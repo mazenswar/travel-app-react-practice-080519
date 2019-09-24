@@ -1,22 +1,109 @@
-.App {
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: 'countryList main placeToVisit';
+  background-color: #91aa9d;
+  color: #193441;
+}
+
+.main {
+  grid-area: main;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.main img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.countries-list {
+  grid-area: countryList;
+  height: 100vh;
+  overflow: scroll;
+}
+.places-list {
+  grid-area: placeToVisit;
+  background-color: #d1dbbd;
+}
+
+.country-card {
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+
+.country-card:hover {
+  background-color: #91aa9d;
+}
+
+.country-card img {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.country-card h3 {
+  margin: 10px;
+}
+
+.main,
+.places-list,
+.countries-list {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.main {
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countries-list {
+  background-color: #3e606f;
+  color: #d1dbbd;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.main-placeholder {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+button {
+  /* margin: 20px 0; */
+  height: 80px;
+  width: 150px;
+  font-size: 15px;
+  border-radius: 25px;
+  margin: 10px;
+  background-color: #d1dbbd;
+  color: #193441;
+  transition: 0.8s;
 }
 
-.App-link {
-  color: #09d3ac;
+button:hover {
+  transform: scale(1.1);
+}
+
+button:focus {
+  outline: 0;
 }
